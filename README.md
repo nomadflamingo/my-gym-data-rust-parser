@@ -52,7 +52,9 @@ WHITESPACE = _{ " " }
 
 Given an input file (`input.txt`) with the following line:
 
+```text
 05.08.2024 / reverse grip lat pulldown / (3 x 10-15) / 35-15 25-15 25-15
+```
 
 This example will be parsed into a `ExerciseRecord` where:
 - The date is `05.08.2024`
@@ -72,8 +74,10 @@ cargo build
 
 Or add this crate to your `Cargo.toml`:
 
+```toml
 [dependencies]
 exercise_log_parser = "0.1.0"
+```
 
 ### Usage
 
@@ -82,10 +86,6 @@ Given `input.txt` file, you can launch this file with the command:
 ```sh
 cargo run -- parse --file input.txt
 ```
-
-### Purpose
-
-This crate is ideal for fitness applications or data processing tools that need to parse and analyze structured exercise logs. By converting logs into structured data, developers can create applications that track workout progress, calculate workout volume, or analyze performance trends over time.
 
 ### License
 

@@ -2,7 +2,8 @@
 name = "my-gym-data-rust-parser"
 version = "0.1.0"
 edition = "2021"
-description = "A Rust parser for my gym data"
+license = "MIT"
+description = "A Rust parser for my gym data log"
 
 [dependencies]
 anyhow = "1.0.93"
