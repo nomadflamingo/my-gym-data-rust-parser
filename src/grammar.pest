@@ -1,0 +1,23 @@
+file = { SOI ~ (record ~ ("\r\n" | "\n")?)+ ~ EOI }
+record = { date ~ "/" ~ exercise_name ~ "/" ~ target ~ "/" ~ set_group }
+
+date  = { day ~ "." ~ month ~ "." ~ year }
+day = { ASCII_DIGIT{2} }
+month = { ASCII_DIGIT{2} }
+year = { ASCII_DIGIT{4} }
+
+exercise_name = { (!"/" ~ ANY)+ }
+
+target = { "(" ~ target_sets ~ "x" ~ target_min_reps ~ "-" ~ target_max_reps ~ ")" }
+target_sets = { ASCII_DIGIT+ }
+target_min_reps = { ASCII_DIGIT+ }
+target_max_reps = { ASCII_DIGIT+ }
+
+set_group = { set ~ (";" ~ set)* }
+set = { attempt ~ ("," ~ attempt)* }
+
+attempt = { weight ~ "-" ~ reps }
+weight = { ASCII_DIGIT+ }
+reps = { ASCII_DIGIT+ }
+
+WHITESPACE = _{ " " }
