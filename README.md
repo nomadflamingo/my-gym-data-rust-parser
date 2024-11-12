@@ -2,6 +2,10 @@
 
 A simple parser for my gym data for each set of exercises written using [Pest](https://pest.rs/) library.
 
+## Links
+* [Crate](https://crates.io/crates/my-gym-data-rust-parser)
+* [Documentation](https://docs.rs/my-gym-data-rust-parser/0.1.0/my_gym_data_rust_parser/)
+
 ## Parsing Process
 
 Each line in the log file represents a group of sets performed in one go for a single exercise and is divided into four sections, separated by the `/` symbol:
