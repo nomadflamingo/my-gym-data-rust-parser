@@ -109,7 +109,7 @@ Or add this crate to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-exercise_log_parser = "0.1.0"
+exercise_log_parser = "0.3.0"
 ```
 
 You can then launch this parser with the command:
