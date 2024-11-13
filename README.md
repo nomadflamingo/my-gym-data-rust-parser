@@ -4,7 +4,7 @@ This is an implementation for a simple parser designed to process weight trainin
 
 ## Links
 * [Crate](https://crates.io/crates/my-gym-data-rust-parser)
-* [Documentation](https://docs.rs/my-gym-data-rust-parser/0.1.0/my_gym_data_rust_parser/)
+* [Documentation](https://docs.rs/my-gym-data-rust-parser/latest/my_gym_data_rust_parser/index.html)
 
 ## Input data format
 
