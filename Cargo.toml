@@ -1,6 +1,6 @@
 [package]
 name = "my-gym-data-rust-parser"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 license = "MIT"
 description = "A Rust parser for my gym data log"
