@@ -1,23 +1,46 @@
+/// Represents the start of input in the file.
 file = { SOI ~ (record ~ ("\r\n" | "\n")?)+ ~ EOI }
+
+/// Represents a complete record entry, formatted as:
+/// `date / exercise_name / target / set_group`
 record = { date ~ "/" ~ exercise_name ~ "/" ~ target ~ "/" ~ set_group }
 
+/// Represents a date, formatted as `day.month.year`.
 date  = { day ~ "." ~ month ~ "." ~ year }
 day = { ASCII_DIGIT{2} }
 month = { ASCII_DIGIT{2} }
 year = { ASCII_DIGIT{4} }
 
+/// Represents the name of an exercise, consisting of any character sequence
+/// that does not include a forward slash `/`.
 exercise_name = { (!"/" ~ ANY)+ }
 
+/// Represents a target for the exercise, formatted as `(sets x min_reps - max_reps)`.
 target = { "(" ~ target_sets ~ "x" ~ target_min_reps ~ "-" ~ target_max_reps ~ ")" }
+
+/// Represents the number of sets in a target.
 target_sets = { ASCII_DIGIT+ }
+
+/// Represents the minimum number of repetitions for a set in a target.
 target_min_reps = { ASCII_DIGIT+ }
+
+/// Represents the maximum number of repetitions for a set in a target.
 target_max_reps = { ASCII_DIGIT+ }
 
+/// Represents a group of sets, formatted as `set; set; ...`.
 set_group = { set ~ (";" ~ set)* }
+
+/// Represents a set entry, formatted as one or more attempts, separated by commas.
 set = { attempt ~ ("," ~ attempt)* }
 
+/// Represents a single attempt in a set, formatted as `weight - reps`.
 attempt = { weight ~ "-" ~ reps }
+
+/// Represents the weight used in an attempt.
 weight = { ASCII_DIGIT+ }
+
+/// Represents the number of repetitions performed in an attempt.
 reps = { ASCII_DIGIT+ }
 
+/// Represents whitespace characters (e.g., spaces) that are ignored in parsing.
 WHITESPACE = _{ " " }
