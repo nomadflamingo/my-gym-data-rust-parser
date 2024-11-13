@@ -78,14 +78,20 @@ mod tests {
         assert_eq!(records.len(), 2);
 
         // Check first record
-        assert_eq!(records[0].date, NaiveDate::from_ymd_opt(2024, 8, 5).unwrap());
+        assert_eq!(
+            records[0].date,
+            NaiveDate::from_ymd_opt(2024, 8, 5).unwrap()
+        );
         assert_eq!(records[0].exercise_name, "bench press");
         assert_eq!(records[0].target.sets_count, 3);
         assert_eq!(records[0].target.min_reps, 10);
         assert_eq!(records[0].target.max_reps, 15);
 
         // Check second record
-        assert_eq!(records[1].date, NaiveDate::from_ymd_opt(2024, 8, 6).unwrap());
+        assert_eq!(
+            records[1].date,
+            NaiveDate::from_ymd_opt(2024, 8, 6).unwrap()
+        );
         assert_eq!(records[1].exercise_name, "squat");
         assert_eq!(records[1].target.sets_count, 4);
         assert_eq!(records[1].target.min_reps, 8);
