@@ -4,7 +4,6 @@ use pest_derive::Parser;
 use std::io;
 use thiserror::Error;
 
-
 #[derive(Error, Debug)]
 pub enum GymDataParserError {
     #[error("IO error: {0}")]
@@ -34,8 +33,6 @@ pub enum GymDataParserError {
     #[error("Invalid number format: {0}")]
     InvalidNumberFormat(#[from] std::num::ParseIntError),
 }
-
-
 
 /// Represents a record of a single exercise session, including the date, exercise name,
 /// target repetition range, and the sets completed.
@@ -67,7 +64,7 @@ pub struct TargetReps {
     /// The minimum number of repetitions targeted for each set.
     pub min_reps: u32,
 
-    /// The maximum number of repetitions targeted for each set. 
+    /// The maximum number of repetitions targeted for each set.
     /// Can be set to the same value as `min_reps`.
     pub max_reps: u32,
 }
@@ -83,7 +80,7 @@ pub struct Set {
 }
 
 /// Represents an attempt within a set, specifying the weight used and the repetitions completed.
-/// 
+///
 /// Part of a `Set` instance.
 #[derive(Debug)]
 pub struct Attempt {
@@ -93,7 +90,6 @@ pub struct Attempt {
     /// The number of repetitions completed in this attempt.
     pub reps: u32,
 }
-
 
 #[derive(Parser)]
 #[grammar = "grammar.pest"]
